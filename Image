@@ -1,0 +1,295 @@
+<style>
+  
+  
+  @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: #fff;
+  z-index: 2;
+  font-family: "Inter", sans-serif;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.slide-title {
+  font-size: 32px;
+  margin: 0;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.slide-description {
+  font-size: 18px;
+  margin: 8px 0;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.slider-arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.slider-arrow svg {
+  width: 30px;
+  color: #fff;
+  display: flex;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+/* Navigation dots */
+
+.slider-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-dot.active {
+  background: #fff;
+  transform: scale(1.2);
+  }
+  
+  </style>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"></meta>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet"></link>
+  </head>
+  <body>
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slide active">
+          <img alt="" src="https://diinsoortv.com/wp-content/uploads/f0f8f-dsc00480.jpg" />
+          <div class="slide-content">
+            <h2 class="slide-title">Dooyfoundation</h2>
+            <p class="slideWelkom #diinsoornewnetwork Our mission is to provide vital 
+transitional and cultural services, 
+Constact us info@diinsoortv.com
+(visite our website Dinsoortv.com/">
+              Welcome to the era of spatial computing.
+            </p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img alt="" src="https://diinsoortv.com/wp-content/uploads/a3af8-dsc00482.jpg" />
+          <div class="slide-content">
+            <h2 class="slide-title">Dooy Pro</h2>
+            <p class="slide-description">Mind-blowing. Head-turning.</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img alt="" src="https://diinsoortv.com/wp-content/uploads/7007f-dsc00485.jpg" />
+          <div class="slide-content">
+            <h2 class="slide-title">Dooyfoundation Pro</h2>
+            <p class="slide-description">
+              Adaptive Audio. Sound that adapts to you.
+            </p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img alt="" src="https://diinsoortv.com/wp-content/uploads/dc8e9-dsc00494.jpg" />
+          <div class="slide-content">
+            <h2 class="slide-title">misra dooy</h2>
+            <p class="slide-description">dooyfoundation community association .</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-nav"></div>
+
+      <div class="slider-arrow prev">
+        <span class="arrow-icon">
+          <svg class="size-6" fill="none" stroke-width="1.5" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.75 19.5 8.25 12l7.5-7.5" stroke-linecap="round" stroke-linejoin="round">
+          </path></svg>
+        </span>
+      </div>
+
+      <div class="slider-arrow next">
+        <span class="arrow-icon">
+          <svg class="size-6" fill="none" stroke-width="1.5" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="m8.25 4.5 7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round">
+          </path></svg>
+        </span>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
+
+<script>
+  
+  const slides = document.querySelectorAll(".slide");
+const sliderNav = document.querySelector(".slider-nav");
+const slider = document.querySelector(".slider");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+let currentSlide = 0;
+let slideCount = slides.length;
+let intervalId = null;
+
+slides.forEach((_, index) => {
+  const dot = document.createElement("div");
+  dot.classList.add("nav-dot");
+
+  if (index === 0) dot.classList.add("active");
+
+  dot.addEventListener("click", () => {
+    goToSlide(index);
+  });
+
+  sliderNav.appendChild(dot);
+});
+
+const dots = document.querySelectorAll(".nav-dot");
+
+function updateDots() {
+  dots.forEach((dot, index) => {
+    dot.classList.toggle("active", index === currentSlide);
+  });
+}
+
+function goToSlide(index) {
+  currentSlide = (index + slideCount) % slideCount;
+  slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+  resetAnimation(slides[currentSlide]);
+  updateDots();
+}
+
+function resetAnimation(slide) {
+  const content = slide.querySelector(".slide-content");
+  if (content) {
+    const clone = content.cloneNode(true);
+    content.parentNode.replaceChild(clone, content);
+  }
+}
+
+function startAutoAdvance() {
+  if (!intervalId) {
+    intervalId = setInterval(handleNextSlide, 5000);
+  }
+}
+
+function stopAutoAdvance() {
+  clearInterval(intervalId);
+  intervalId = null;
+}
+
+startAutoAdvance();
+
+slider.addEventListener("mouseenter", stopAutoAdvance);
+slider.addEventListener("mouseleave", startAutoAdvance);
+
+function handleNextSlide() {
+  stopAutoAdvance();
+  goToSlide(currentSlide + 1);
+  startAutoAdvance();
+}
+
+function handlePrevSlide() {
+  stopAutoAdvance();
+  goToSlide(currentSlide - 1);
+  startAutoAdvance();
+}
+
+prevBtn.addEventListener("click", handlePrevSlide);
+nextBtn.addEventListener("click", handleNextSlide);
+  
+</script>
